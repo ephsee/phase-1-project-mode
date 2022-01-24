@@ -4,6 +4,12 @@ body {
 
 h1 {
     text-align: center;
+    background-color: black;
+    color: white;
+    line-height: 100px;
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-right: -10px;
 }
 
 div#state_holder {
@@ -19,10 +25,6 @@ button.states {
     font-size: 16px;
     margin-left: 60px;
     margin-right: 60px;
-}
-
-div {
-    text-align: right;
 }
 
 form#comment-form {
