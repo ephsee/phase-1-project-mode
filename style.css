@@ -1,3 +1,30 @@
 body {
     background-color: rgb(87, 87, 131);
 }
+
+h1 {
+    text-align: center;
+}
+
+div#state_holder {
+    margin: auto;    
+    width: 99%;
+    text-align: center;
+}
+
+button.states { 
+    background-color: black;
+    color: white;
+    padding: 20px 75px;
+    font-size: 16px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+div {
+    text-align: right;
+}
+
+form#comment-form {
+    text-align: center;
+}
