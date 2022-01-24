@@ -34,3 +34,9 @@ h1 {
 form#comment-form {
     text-align: center;
 }
+
+.top-table {
+    padding: 10px;
+    font-style: bold;
+}
+

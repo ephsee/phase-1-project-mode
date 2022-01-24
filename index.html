@@ -76,17 +76,33 @@
 
     <div>
         <table>
-            <th> </th>
-            <tr> </tr>
-            <tr> </tr>
-            <td> </td>
+            <thead>
+                <tr></tr>
+                <th class='top-table'>state</th>
+                <th class='top-table'>positive</th>
+                <th class='top-table'>negative</th>
+                <th class='top-table'>hospitalizations</th>
+                <th class='top-table'>tests</th>
+            </thead>
         </table>
     </div>
 
-    <form id="comment-form" action="">
-        <input type="text" placeholder='Add Comments Here'>
-        <label for="text"></label>
-        <button>Post</button>
-    </form>
+    <div>
+        <ul id='comment-list'>
+
+        </ul>
+    </div>
+
+    <form id="comment-form">
+        <label for="name"></label>
+        <input type="text" id="name" name="name" placeholder='Enter Name'><br><br>
+        <label for="comment"></label>
+        <input type="text" id="comment" name="comment" placeholder='Enter Comment'><br><br>
+        <input type="submit" value="New Comment" id='addComment'>
+      </form>
+
+    <table>
+        <tr id='all-states'></tr>
+    </table>
 </body>
 </html>
