@@ -1,35 +1,58 @@
 body {
-    background-color: rgb(87, 87, 131);
+    background-image: url("https://wallpaper-house.com/data/out/8/wallpaper2you_235197.jpg")
 }
-
 h1 {
+    font-family: monospace, monaco;
     text-align: center;
     background-color: black;
     color: white;
+    box-shadow: 12px 10px 15px 5px rgba(0,0,0,0.58);
 }
-
 #state-holder {
- 
     text-align: center;
 }
-
-.states { 
+.states {
     background-color: black;
     color: white
 }
-
-form#comment-form {
-    text-align: center;
+.state-dropdown {
+    margin-left: auto;
+    margin-right: auto;
 }
-
+.stats-table {
+    font-family: monospace, monaco;
+    padding-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 100px;
+}
+form#comment-form {
+    display: block;
+    text-align: center;
+    width: 200px;
+    border: 5px solid grey;
+    padding: 50px;
+    margin: auto;
+    background-color: rgb(56,56,56);
+    box-shadow: 12px 10px 15px 5px rgba(0,0,0,0.58)
+}
+#comment-list {
+    text-align: center;
+    list-style-type: none;
+    color: white;
+    box-shadow: 12px 10px 15px 5px rgba(0,0,0,0.58);
+}
 .top-table {
     padding: 20px;
     font-style: bold;
     background-color: rgb(67, 90, 99);
     text-align: center;
+    box-shadow: 12px 10px 15px 5px rgba(0,0,0,0.58);
 }
-
 #date {
+    font-family: monospace, monaco;
     text-align: center;
+    padding-bottom: 30px;
     font-size: larger;
     color: rgb(202, 202, 202)
+}

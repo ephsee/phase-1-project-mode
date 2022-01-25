@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,13 +9,14 @@
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
+
 <body>
     <div id="heading">
-    <h1>COVID DATA CHART - after year one</h1>
+        <h1>COVID DATA CHART - after year one</h1>
     </div>
 
     <div id="date">
-    <span>Date Goes Here</span>
+        <span>Date Goes Here</span>
     </div>
 
     <div class="state-dropdown" style="width: 200px;">
@@ -64,25 +66,24 @@
             <option value="TN">Tennessee (TN)</option>
             <option value="TX">Texas (TX)</option>
             <option value="UT">Utah (UT)</option>
-            <option value="VT">Vermont</option>
-            <option value="VA">Virginia</option>
-            <option value="WA">Washington</option>
-            <option value="WV">West Virginia</option>
-            <option value="WI">Wisconsin</option>
-            <option value="WY">Wyoming</option>
+            <option value="VT">Vermont (VT)</option>
+            <option value="VA">Virginia (VA)</option>
+            <option value="WA">Washington (WA)</option>
+            <option value="WV">West Virginia (WV)</option>
+            <option value="WI">Wisconsin (WI)</option>
+            <option value="WY">Wyoming (WY)</option>
         </select>
     </div>
 
     <div>
         <table class="stats-table">
             <thead>
-                <th class='top-table' >State: </th>
-                <th class='top-table' >Positive Results: </th>
-                <th class='top-table' >Negative Results: </th>
-                <th class='top-table' >Hospitalizations:</th>
-                <th class='top-table' >Total Tests: </th>
+                <th class='top-table'>State: </th>
+                <th class='top-table'>Positive Results: </th>
+                <th class='top-table'>Negative Results: </th>
+                <th class='top-table'>Hospitalizations:</th>
+                <th class='top-table'>Total Tests: </th>
                 <tr id='stateName' class='top-table'></tr>
-
             </thead>
         </table>
     </div>
@@ -97,8 +98,11 @@
         <input type="text" id="name" name="name" placeholder='Enter Name'><br><br>
         <label for="comment"></label>
         <input type="text" id="comment" name="comment" placeholder='Enter Comment'><br><br>
+        <label for="state"></label>
+        <input type="text" id="user-state" name="state" placeholder='Enter State'><br><br>
         <input type="submit" value="New Comment" id='addComment'>
-      </form>
+    </form>
 
 </body>
+
 </html>
