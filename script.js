@@ -123,7 +123,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     setTimeout(function(){
         const changeBackgroundColor = document.querySelector('body')
-        changeBackgroundColor.style.color = 'blue'
+        changeBackgroundColor.style.color = 'white'
         console.log('now the text is ' + changeBackgroundColor.style.color)
     }, 5000);
 })
