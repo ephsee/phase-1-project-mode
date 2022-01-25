@@ -1,62 +1,67 @@
 handleForm()
+showComments()
 
 fetch('https://api.covidtracking.com/v1/states/current.json')
 .then(r => r.json())
-.then(data => data.forEach(showData))   
+.then(data => showState(data))   
 
-function showData(data) {
+function showState(arr) {
     
-    const newDate = document.querySelector('#date')
-    newDate.textContent = 'DATE: ' + data.date
-    
-    const allStats = document.querySelector('#all-states')
-    
-    const newState = document.createElement('tr')
-    newState.textContent = 'State: ' + data.state
-    allStats.append(newState)
-    
-    const newPositive = document.createElement('td')
-    newPositive.textContent = 'Positive: ' + (data.positive)
-    newState.append(newPositive)
-    
-    const newNegative = document.createElement('td')
-    newNegative.textContent = 'Negative: ' + (data.negative) // check null value
-    newState.append(newNegative)
-    if(newNegative === null) {
-        newNegative.textContent = parseInt('0')
-    }
-    
-    const newHospitalizations = document.createElement('td')
-    newHospitalizations.textContent = 'Hospitalizations: ' + data.hospitalizedCurrently // check null value
-    newState.append(newHospitalizations)
-    
-    const newTests = document.createElement('td')
-    newTests.textContent = 'Tests: ' + data.totalTestResults // check null value
-    newState.append(newTests)
+    const dropDown = document.querySelector('.states')
+    dropDown.addEventListener('change', e => {
+        
+        const tableState = document.querySelector('#stateName')
+        const dropDownValue = e.target.value
+        tableState.textContent = dropDownValue
+        
+        arr.forEach(stata => {
+            
+            if (dropDownValue === stata.state){
+                
+                const positive = document.createElement('td')
+                positive.textContent = stata.positive
+                tableState.append(positive)                
+                const negative = document.createElement('td')
+                negative.textContent = stata.negative
+                tableState.append(negative)
+                const hospital = document.createElement('td')
+                hospital.textContent = stata.hospitalizedCurrently
+                tableState.append(hospital)
+                const tests = document.createElement('td')
+                tests.textContent = stata.totalTestResults
+                tableState.append(tests)
+                
+                const dateEl = document.querySelector('#date')
+                dateEl.innerText = `Date of Findings ${stata.lastUpdateEt}`
+            }
+        })
+    })
 }
 
 function handleForm() {
     
     const newComment = document.querySelector('#comment-form')
-    
     newComment.addEventListener('submit', e => {
         
         e.preventDefault()
         
-        const userName = document.querySelector('#name')
-        const userComment = document.querySelector('#comment')
+        const userNameEl = document.querySelector('#name')
+        const userCommentEl = document.querySelector('#comment')
         const commentList = document.getElementById('comment-list')
         const listItem = document.createElement('li')
         
-        listItem.textContent = userName.value + `: ${userComment.value} `
+        const userName = userNameEl.value
+        const userComment = userCommentEl.value
+        
+        listItem.textContent = `${userName} : ${userComment} `
         listItem.className = 'list-comment'
         
         commentList.append(listItem)
         newComment.reset()
         
         addComment = {
-            'user name': userName.value.textContent,
-            'user comment': userComment.value.textContent
+            'user name': userName,
+            'user comment': userComment
         }
         
         fetch('http://localhost:3000/comments/', {
@@ -74,14 +79,21 @@ function handleForm() {
     
 }
 
-// function deleteComment(comment) {
-//     return fetch('http://localhost:3000/comments/${id}', {
-//         method: 'DELETE'
-//     })
-// }
+function showComments() {
+    
+    fetch('http://localhost:3000/comments/')
+    .then(r=>r.json())
+    .then(dataComments => {
+        const list = document.querySelector('#comment-list')
+        
+        dataComments.forEach(dbComment => {
+            const oldComments = document.createElement('li')
+            oldComments.innerText = dbComment['user name'] + ' : ' + dbComment['user comment']
+            list.append(oldComments)
+        })
+    })
+}
 
-// document.addEventListener(DOMContentLoaded, welcomeMessage)
-
-// function welcomeMessage() {    
-//     alert("Hello!")
-// }
+// The COVID Tracking Project at The Atlantic’s data and website content is published under a Creative Commons CC BY 4.0 license,
+// which requires users to attribute the source and license type (CC BY 4.0) when sharing our data or website content.
+// Our preferred attribution is The COVID Tracking Project at The Atlantic or The COVID Tracking Project.

@@ -9,17 +9,16 @@
     <script defer src="script.js"></script>
 </head>
 <body>
-    <h1>COVID DATA CHART</h1>
-
-    <div id="state-holder">
-        <button class='states'>state1</button>
-        <button class='states'>state2</button>
-        <button class='states'>state3</button>
-        <button class='states'>state4</button>
-        <button class='states'>state5</button>
+    <div id="heading">
+    <h1>COVID DATA CHART - after year one</h1>
     </div>
+
+    <div id="date">
+    <span>Date Goes Here</span>
+    </div>
+
     <div class="state-dropdown" style="width: 200px;">
-        <select>
+        <select class="states">
             <option value="AL">Alabama (AL)</option>
             <option value="AK">Alaska (AK)</option>
             <option value="AZ">Arizona (AZ)</option>
@@ -75,21 +74,21 @@
     </div>
 
     <div>
-        <table>
+        <table class="stats-table">
             <thead>
-                <tr></tr>
-                <th class='top-table'>state</th>
-                <th class='top-table'>positive</th>
-                <th class='top-table'>negative</th>
-                <th class='top-table'>hospitalizations</th>
-                <th class='top-table'>tests</th>
+                <th class='top-table' >State: </th>
+                <th class='top-table' >Positive Results: </th>
+                <th class='top-table' >Negative Results: </th>
+                <th class='top-table' >Hospitalizations:</th>
+                <th class='top-table' >Total Tests: </th>
+                <tr id='stateName' class='top-table'></tr>
+
             </thead>
         </table>
     </div>
 
     <div>
         <ul id='comment-list'>
-
         </ul>
     </div>
 
@@ -101,8 +100,5 @@
         <input type="submit" value="New Comment" id='addComment'>
       </form>
 
-    <table>
-        <tr id='all-states'></tr>
-    </table>
 </body>
 </html>

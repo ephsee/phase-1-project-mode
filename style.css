@@ -6,29 +6,16 @@ h1 {
     text-align: center;
     background-color: black;
     color: white;
-    line-height: 100px;
-    margin-top: -10px;
-    margin-left: -10px;
-    margin-right: -10px;
 }
 
 #state-holder {
-    margin: auto;    
-    width: 99%;
+ 
     text-align: center;
 }
 
 .states { 
     background-color: black;
-    color: white;
-    padding: 20px 75px;
-    font-size: 16px;
-    margin-left: 60px;
-    margin-right: 60px;
-}
-
-.state-dropdown {
-    margin: auto;
+    color: white
 }
 
 form#comment-form {
@@ -36,7 +23,13 @@ form#comment-form {
 }
 
 .top-table {
-    padding: 10px;
+    padding: 20px;
     font-style: bold;
+    background-color: rgb(67, 90, 99);
+    text-align: center;
 }
 
+#date {
+    text-align: center;
+    font-size: larger;
+    color: rgb(202, 202, 202)
