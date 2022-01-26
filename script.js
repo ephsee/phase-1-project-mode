@@ -107,7 +107,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     popUpBox.style.color = 'black'
     popUpBox.style.backgroundColor = 'white'
     popUpBox.style.padding = '10px'
-    popUpBox.innerText = 'HELLO BUY MY STUFF THANKS!'
+    popUpBox.innerText = 'HELLO BUY MY STUFF THANKS! '
     delBtn.innerText = 'x'
     delBtn.style.color = 'red'
     delBtn.style.backgroundColor = 'black'
@@ -120,13 +120,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
         console.log('clicked', e)
         popUpBox.remove()
     })
-
-    setTimeout(function(){
-        const changeBackgroundColor = document.querySelector('body')
-        changeBackgroundColor.style.color = 'white'
-        console.log('now the text is ' + changeBackgroundColor.style.color)
-    }, 5000);
 })
+
+function showFlags() {
+    fetch('http://localhost:3000/flags')
+    .then(r=>r.json())
+    .then(data => console.log(data))
+}
 
 // The COVID Tracking Project at The Atlantic’s data and website content is published under a Creative Commons CC BY 4.0 license,
 // which requires users to attribute the source and license type (CC BY 4.0) when sharing our data or website content.
