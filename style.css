@@ -8,6 +8,10 @@ h1 {
     color: white;
     box-shadow: 12px 10px 15px 5px rgba(0,0,0,0.58);
 }
+.states {
+    background-color: black;
+    color: white
+}
 .state-dropdown {
     margin-left: auto;
     margin-right: auto;
