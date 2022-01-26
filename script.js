@@ -6,7 +6,7 @@ fetch('https://api.covidtracking.com/v1/states/current.json')
 .then(data => showState(data))   
 
 function showState(arr) {
-    
+
     const dropDown = document.querySelector('.states')
     dropDown.addEventListener('change', e => {
         
@@ -33,10 +33,30 @@ function showState(arr) {
                 
                 const dateEl = document.querySelector('#date')
                 dateEl.innerText = `Date of Findings ${stata.lastUpdateEt}`
-            }
-        })
+
+                fetch('http://localhost:3000/flags')
+                .then(r=>r.json())
+                .then(flags => flags.forEach( flag => {
+                    
+                    if (dropDownValue === flag.state){
+                        const displayFlag = document.querySelector('#flag')
+                    displayFlag.src = flag.image
+                }
+                })
+                )}
+            })
     })
 }
+
+
+function flagDoer(flags) {
+    const displayFlag = document.querySelector('#flagContainer')
+    const flagHolder = document.createElement('img')
+    flagHolder.src = flags.image
+    displayFlag.append(flagHolder)
+}
+
+
 
 function handleForm() {
     
@@ -114,7 +134,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     popUpBox.style.margin = '10px'
     popUp.append(popUpBox)
     popUpBox.append(delBtn)
-    }, 7000);
+}, 7000);
 
     delBtn.addEventListener('click', e => {
         console.log('clicked', e)
@@ -122,13 +142,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
     })
 })
 
-function showFlags() {
-    fetch('http://localhost:3000/flags')
-    .then(r=>r.json())
-    .then(data => console.log(data))
-}
 
-// The COVID Tracking Project at The Atlantic’s data and website content is published under a Creative Commons CC BY 4.0 license,
+// function showFlags() {
+    //     fetch('http://localhost:3000/flags')
+//     .then(r=>r.json())
+//     .then(data => {
+    //         return data
+    //     })
+    // }
+    
+    // The COVID Tracking Project at The Atlantic’s data and website content is published under a Creative Commons CC BY 4.0 license,
 // which requires users to attribute the source and license type (CC BY 4.0) when sharing our data or website content.
 // Our preferred attribution is The COVID Tracking Project at The Atlantic or The COVID Tracking Project.
 
