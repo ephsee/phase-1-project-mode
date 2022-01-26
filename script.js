@@ -109,18 +109,22 @@ function showComments() {
 window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed', event);
     
-    const popUpBox = document.createElement('span')
+    const popUpBox = document.createElement('p')
     const delBtn = document.createElement('button')
     setTimeout( () => {
     const popUp = document.querySelector('body')
     popUpBox.style.color = 'black'
     popUpBox.style.backgroundColor = 'white'
     popUpBox.style.padding = '10px'
-    popUpBox.innerText = 'HELLO BUY MY STUFF THANKS! '
+    popUpBox.style.position= 'absolute'
+    popUpBox.style.left= '40px'
+    popUpBox.style.top= '40px'
+    popUpBox.innerText = "bananas"
     delBtn.innerText = 'x'
     delBtn.style.color = 'red'
     delBtn.style.backgroundColor = 'black'
     popUpBox.style.margin = '10px'
+
     popUp.append(popUpBox)
     popUpBox.append(delBtn)
 }, 7000);
@@ -131,6 +135,3 @@ window.addEventListener('DOMContentLoaded', (event) => {
     })
 })
     
-// The COVID Tracking Project at The Atlantic’s data and website content is published under a Creative Commons CC BY 4.0 license,
-// which requires users to attribute the source and license type (CC BY 4.0) when sharing our data or website content.
-// Our preferred attribution is The COVID Tracking Project at The Atlantic or The COVID Tracking Project.
