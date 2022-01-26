@@ -119,7 +119,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
     popUpBox.style.position= 'absolute'
     popUpBox.style.left= '40px'
     popUpBox.style.top= '40px'
-    popUpBox.innerText = "bananas"
+    const webLink = document.createElement('a')
+    webLink.href = 'https://www.covidtests.gov/'
+    webLink.innerText = `GET FREE AT-HOME COVID-19 TESTS `
+    popUpBox.append(webLink)
     delBtn.innerText = 'x'
     delBtn.style.color = 'red'
     delBtn.style.backgroundColor = 'black'
