@@ -22,7 +22,7 @@ h1 {
     padding-top: 30px;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 100px;
+    padding-bottom: 30px;
 }
 form#comment-form {
     display: block;
@@ -35,6 +35,7 @@ form#comment-form {
     box-shadow: 12px 10px 15px 5px rgba(0,0,0,0.58)
 }
 #comment-list {
+    font-family: monospace, monaco;
     text-align: center;
     list-style-type: none;
     color: white;
@@ -68,6 +69,7 @@ form#comment-form {
     margin-right: auto;
 }
 #commentTitle {
+    font-family: monospace, monaco;
     color: white;
     background-color: black;
     padding: 5px

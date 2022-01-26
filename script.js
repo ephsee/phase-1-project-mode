@@ -41,7 +41,8 @@ function showState(arr) {
                     if (dropDownValue === flag.state){
                         const displayFlag = document.querySelector('#flag')
                     displayFlag.src = flag.image
-                }
+                }                   
+                
                 })
                 )}
             })
@@ -112,25 +113,25 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const popUpBox = document.createElement('p')
     const delBtn = document.createElement('button')
     setTimeout( () => {
-    const popUp = document.querySelector('body')
-    popUpBox.style.color = 'black'
-    popUpBox.style.backgroundColor = 'white'
-    popUpBox.style.padding = '10px'
-    popUpBox.style.position= 'absolute'
-    popUpBox.style.left= '40px'
-    popUpBox.style.top= '40px'
-    const webLink = document.createElement('a')
-    webLink.href = 'https://www.covidtests.gov/'
-    webLink.innerText = `GET FREE AT-HOME COVID-19 TESTS `
-    popUpBox.append(webLink)
-    delBtn.innerText = 'x'
-    delBtn.style.color = 'red'
-    delBtn.style.backgroundColor = 'black'
-    popUpBox.style.margin = '10px'
+        const popUp = document.querySelector('body')
+        popUpBox.style.color = 'black'
+        popUpBox.style.backgroundColor = 'white'
+        popUpBox.style.padding = '10px'
+        popUpBox.style.position= 'absolute'
+        popUpBox.style.left= '40px'
+        popUpBox.style.top= '40px'
+        const webLink = document.createElement('a')
+        webLink.href = 'https://www.covidtests.gov/'
+        webLink.innerText = `GET FREE AT-HOME COVID-19 TESTS `
+        popUpBox.append(webLink)
+        delBtn.innerText = 'x'
+        delBtn.style.color = 'red'
+        delBtn.style.backgroundColor = 'black'
+        popUpBox.style.margin = '10px'
 
-    popUp.append(popUpBox)
-    popUpBox.append(delBtn)
-}, 7000);
+        popUp.append(popUpBox)
+        popUpBox.append(delBtn)
+    }, 7000);
 
     delBtn.addEventListener('click', e => {
         console.log('clicked', e)
