@@ -8,9 +8,6 @@ h1 {
     color: white;
     box-shadow: 12px 10px 15px 5px rgba(0,0,0,0.58);
 }
-#state-holder {
-    text-align: center;
-}
 .states {
     background-color: black;
     color: white
@@ -27,7 +24,6 @@ h1 {
     margin-right: auto;
     padding-bottom: 100px;
 }
-
 form#comment-form {
     display: block;
     text-align: center;
@@ -51,6 +47,7 @@ form#comment-form {
     background-color: rgb(67, 90, 99);
     text-align: center;
     box-shadow: 12px 10px 15px 5px rgba(0,0,0,0.58);
+    color: white;
 }
 #date {
     font-family: monospace, monaco;
