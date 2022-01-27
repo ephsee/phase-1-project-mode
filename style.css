@@ -58,8 +58,8 @@ form#comment-form {
     color: rgb(202, 202, 202)
 }
 #flag {
-    width: 400px;
-    height: auto;
+    width: auto;
+    height: 300px;
 }
 #flagContainer {
     display: block;
